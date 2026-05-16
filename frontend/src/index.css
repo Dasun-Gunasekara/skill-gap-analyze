@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --secondary: #10B981;
+  --background: #0F172A;
+  --surface: #1E293B;
+  --surface-hover: #334155;
+  --text: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border: #334155;
+  --danger: #EF4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base Utility Classes */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Override Ant Design Default Styles for Dark Theme */
+.ant-card {
+  background-color: var(--surface) !important;
+  border-color: var(--border) !important;
+  border-radius: 12px !important;
+  color: var(--text) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.ant-card-head {
+  border-bottom-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+.ant-typography {
+  color: var(--text) !important;
+}
+
+.ant-btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39) !important;
+  color: #fff !important;
+}
+
+.ant-btn-primary:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+.ant-btn {
+  color: #fff !important;
+}
+
+.ant-input, .ant-select-selector {
+  background-color: var(--background) !important;
+  border-color: var(--border) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+}
+
+.ant-input:focus, .ant-input:hover, .ant-select-selector:hover, .ant-select-selector:focus {
+  border-color: var(--primary) !important;
+}
+
+.ant-form-item-label > label {
+  color: var(--text-muted) !important;
+}
+
+.ant-table-wrapper .ant-table {
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+.ant-table-thead > tr > th {
+  background-color: var(--background) !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background-color: var(--surface-hover) !important;
+}
+
+.ant-modal-content {
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+}
+.ant-modal-header {
+  background-color: var(--surface) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+.ant-modal-title {
+  color: var(--text) !important;
+}
+.ant-select-dropdown {
+  background-color: var(--surface) !important;
+}
+.ant-select-item {
+  color: var(--text) !important;
+}
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: var(--surface-hover) !important;
+}
+.ant-select-selection-item {
+  color: var(--text) !important;
+}
+
+.ant-statistic-title {
+  color: var(--text-muted) !important;
+}
+.ant-statistic-content {
+  color: var(--text) !important;
+}
+
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Header */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar-link:hover, .navbar-link.active {
+  color: var(--text);
+}
+
+.skill-tag {
+  background: rgba(79, 70, 229, 0.2);
+  color: #818CF8;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  display: inline-block;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.skill-tag.missing {
+  background: rgba(239, 68, 68, 0.2);
+  color: #F87171;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.skill-tag.matched {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border-color: rgba(16, 185, 129, 0.3);
+}
