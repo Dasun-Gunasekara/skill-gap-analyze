@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import cors from "cors";
 
 import userRouter from "./routes/userRoute.js";
 import adminRouter from "./routes/adminRoute.js";
@@ -10,8 +11,8 @@ const app = express();
 
 dotenv.config();
 
+app.use(cors());
 app.use(bodyParser.json());
-
 
 app.get("/", (req, res) => {
     res.send("Skill Gap Analysis API Running");
